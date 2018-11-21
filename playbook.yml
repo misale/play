@@ -12,6 +12,7 @@
   - name: Add CentOS Base Yum repo 
     yum_repository:
       name: CentOS-$releasever - Base
+      description: CentOS Base Repository
       mirrorlist: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
       gpgcheck: yes
       enabled: yes
@@ -19,6 +20,7 @@
 
   - name: Add CentOS Updates Yum repo
     yum_repository:
+      description: CentOS Updates Repository
       name: CentOS-$releasever - Updates
       mirrorlist: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates&infra=$infra
       gpgcheck: yes
@@ -26,6 +28,7 @@
 
   - name: Add CentOS Extras Yum repo
     yum_repository:
+      description: CentOS Extras Repository
       name: CentOS-$releasever - Extras
       mirrorlist: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras&infra=$infra
       gpgcheck: yes
@@ -34,6 +37,7 @@
 
   - name: Add CentOS Plus Yum repo      
     yum_repository:
+      description: CentOS Plus Repository
       name: CentOS-$releasever - Plus
       mirrorlist: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus&infra=$infra
       gpgcheck: yes
