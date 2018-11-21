@@ -9,7 +9,7 @@
   - name: stop services
     shell: sleep 30
   
-  - Add CentOS Base Yum repo 
+  - name: Add CentOS Base Yum repo 
     yum_repository:
       name: CentOS-$releasever - Base
       mirrorlist: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
@@ -17,14 +17,14 @@
       enabled: yes
       gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
-  - Add CentOS Updates Yum repo
+  - name: Add CentOS Updates Yum repo
     yum_repository:
       name: CentOS-$releasever - Updates
       mirrorlist: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates&infra=$infra
       gpgcheck: yes
       gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
-  - Add CentOS Extras Yum repo
+  - name: Add CentOS Extras Yum repo
     yum_repository:
       name: CentOS-$releasever - Extras
       mirrorlist: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras&infra=$infra
@@ -32,7 +32,7 @@
       enabled: yes
       gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
-  - Add CentOS Plus Yum repo      
+  - name: Add CentOS Plus Yum repo      
     yum_repository:
       name: CentOS-$releasever - Plus
       mirrorlist: http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus&infra=$infra
