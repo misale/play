@@ -1,0 +1,21 @@
+- hosts: all
+  #vars:
+  remote_user: centos
+  become: yes
+  #rolling upgrade
+  serial: 1
+  become_method: sudo
+  tasks:
+  - name: stop services
+    shell: sleep 30
+  
+  - name: Upgrade Nginx 
+    yum: name=nginx state=latest
+    sudo: true
+
+  - name: Start nginx 
+    service: name=nginx state=restarted
+    sudo: true
+
+  - name: another task
+    shell: sleep 30
